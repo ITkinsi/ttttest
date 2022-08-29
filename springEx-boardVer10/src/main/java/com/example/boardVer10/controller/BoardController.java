@@ -10,6 +10,7 @@ import com.example.boardVer10.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 // ㅁㄴㅇㅁㄴ
+// 아무거나
 @Slf4j
 @RequiredArgsConstructor
 @RequestMapping(path = "/board")

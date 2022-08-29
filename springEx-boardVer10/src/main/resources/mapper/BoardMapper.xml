@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.boardVer10.repository.BoardMapper">
+	<!-- 게시물 등록 -->
+	<insert id="saveBoard" parameterType="board">
+	<selectKey keyProperty="id" resultType="int" order="BEFORE">
+		select seq_board.nextval from dual
+	</selectKey>
+		insert into tb_Board (
+			id,
+			title,
+			content,
+			hit,
+			member_id,
+		)	values (
+			#{id},
+			#{title},
+			#{content},
+			#{member_id}
+		)
+	</insert>
+	<!-- 게시물 전체 검색 --> 
+	<select id="findAllBoards" resultType="board">
+		select * from tb_board order by inputTime desc
+	</select>
+	<!-- 게시물 검색(게시물 ID) -->
+	<select id="findBoardById" parameterType="long" resultType="board">
+		select * from tb_board where id = #{id}
+	</select>
+	<!-- 게시물 수정 -->
+	<update id="updateBoard" parameterType="board">
+		update tb_board
+		<set>
+			title = #{title},
+			content = #{content},
+			hit = #{hit},
+			updateTime = #{updateTime}
+		</set>
+		where id = #{id}
+	</update>
+	<!-- 게시물 삭제 -->
+	<delete id="removeBoard" parameterType="long">
+		delete from tb_board where id = #{id}
+	</delete>
+</mapper>

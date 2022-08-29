@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/default.css">
+</head>
+<body>
+    <div id="container">
+        <form th:action="@{/board/write}" th:method="post" th:object="${writeBoardForm}">
+            <h2 class="center">[ 글 쓰기 ]</h2>
+            
+        </form>
+    </div>
+</body>
+</html>

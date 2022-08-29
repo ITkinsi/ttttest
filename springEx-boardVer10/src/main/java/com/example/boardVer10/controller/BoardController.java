@@ -9,8 +9,12 @@ import com.example.boardVer10.service.BoardService;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+<<<<<<< HEAD
+// aasdasdsadjkasnfbsdfjkbgsdfjkg
+=======
 // ㅁㄴㅇㅁㄴ
 // 아무거나
+>>>>>>> branch 'main' of https://github.com/ITkinsi/ttttest.git
 @Slf4j
 @RequiredArgsConstructor
 @RequestMapping(path = "/board")
